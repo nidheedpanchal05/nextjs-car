@@ -5,13 +5,15 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import CustomButton from "./CustomButton";
 
-const ShowMore = ({ pageNumber, isNext }: ShowMOreProps) => {
-  const router = useRouter();
+// const ShowMore = ({ pageNumber, isNext }: ShowMOreProps) => {
+const ShowMore = ({ pageNumber, isNext, setLimit }: ShowMOreProps) => {
+  // const router = useRouter();
 
   const handleNavigation = () => {
     const newLimit = (pageNumber + 1) * 10;
-    const newPathName = updateSearchParams("limit", `${newLimit}`);
-    router.push(newPathName);
+    setLimit(newLimit);
+    // const newPathName = updateSearchParams("limit", `${newLimit}`);
+    // router.push(newPathName);
   };
 
   return (
